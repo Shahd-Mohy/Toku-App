@@ -1,6 +1,6 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:lang_app/models/numbers.dart';
-
 
 class Num_item extends StatelessWidget {
   const Num_item({super.key, required this.number});
@@ -53,7 +53,8 @@ class Num_item extends StatelessWidget {
                   icon: Icon(Icons.play_arrow_rounded),
                   color: Colors.black,
                   onPressed: () {
-                    
+                    final player = AudioPlayer();
+                    player.play(AssetSource('assets/sounds/family/daughter.wav'));
                   }),
             )
           ],
