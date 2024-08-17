@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lang_app/screens/colors_page.dart';
+import 'package:lang_app/screens/family_page.dart';
 import 'package:lang_app/screens/numbers_page.dart';
+import 'package:lang_app/screens/phrases_page.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -84,6 +88,12 @@ class HomePage extends StatelessWidget {
                               "https://t3.ftcdn.net/jpg/00/74/45/84/360_F_74458490_OQvTsYVcXO02Q5AFiWW4Ec4fbtXRSbxg.jpg",
                           bottomRight: 30,
                           topLeft: 30,
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return FamilyPage();
+                            }));
+                          },
                         ),
                       ],
                     ),
@@ -98,6 +108,12 @@ class HomePage extends StatelessWidget {
                               "https://th.bing.com/th/id/OIP.iZuX5pnfvOWhUsPie98ffAHaGL?rs=1&pid=ImgDetMain",
                           bottomRight: 30,
                           topLeft: 30,
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return ColorsPage();
+                            }));
+                          },
                         ),
                         Category(
                           text: "Phrase",
@@ -108,6 +124,12 @@ class HomePage extends StatelessWidget {
                               "https://ih0.redbubble.net/image.652393791.4644/flat,1000x1000,075,f.jpg",
                           bottomRight: 0,
                           topLeft: 0,
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return PhrasesPage();
+                            }));
+                          },
                         )
                       ],
                     )

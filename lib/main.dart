@@ -14,6 +14,3 @@ class TukoApp extends StatelessWidget {
     return (MaterialApp(debugShowCheckedModeBanner: false, home: const HomePage()));
   }
 }
-
-
-  

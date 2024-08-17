@@ -1,36 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:lang_app/components/item.dart';
-import 'package:lang_app/models/numbers.dart';
-
+import 'package:lang_app/components/List_item.dart';
+import 'package:lang_app/models/items.dart';
 
 class NumbersPage extends StatelessWidget {
   const NumbersPage({super.key});
 
-  final List<Number> numbers = const [
-    Number(
-        image: "assets/images/numbers/number_one.png", jpName: "Ichi", enName: "One"),
-    Number(image: "assets/images/numbers/number_two.png", jpName: "Ni", enName: "Two"),
-    Number(
+  final List<Item_Model> numbers = const [
+    Item_Model(
+        image: "assets/images/numbers/number_one.png",
+        jpName: "Ichi",
+        enName: "One",
+        sound: "sounds/numbers/number_one_sound.mp3"),
+    Item_Model(
+        image: "assets/images/numbers/number_two.png",
+        jpName: "Ni",
+        enName: "Two",
+        sound: "sounds/numbers/number_two_sound.mp3"),
+    Item_Model(
         image: "assets/images/numbers/number_three.png",
         jpName: "San",
-        enName: "Three"),
-    Number(
-        image: "assets/images/numbers/number_four.png", jpName: "Shi", enName: "Four"),
-    Number(
-        image: "assets/images/numbers/number_five.png", jpName: "Go", enName: "Five"),
-    Number(
-        image: "assets/images/numbers/number_six.png", jpName: "Roku", enName: "Six"),
-    Number(
+        enName: "Three",
+        sound: "sounds/numbers/number_three_sound.mp3"),
+    Item_Model(
+        image: "assets/images/numbers/number_four.png",
+        jpName: "Shi",
+        enName: "Four",
+        sound: "sounds/numbers/number_four_sound.mp3"),
+    Item_Model(
+        image: "assets/images/numbers/number_five.png",
+        jpName: "Go",
+        enName: "Five",
+        sound: "sounds/numbers/number_five_sound.mp3"),
+    Item_Model(
+        image: "assets/images/numbers/number_six.png",
+        jpName: "Roku",
+        enName: "Six",
+        sound: "sounds/numbers/number_six_sound.mp3"),
+    Item_Model(
         image: "assets/images/numbers/number_seven.png",
         jpName: "Shichi",
-        enName: "Seven"),
-    Number(
+        enName: "Seven",
+        sound: "sounds/numbers/number_seven_sound.mp3"),
+    Item_Model(
         image: "assets/images/numbers/number_eight.png",
         jpName: "Hachi",
-        enName: "Eight"),
-    Number(
-        image: "assets/images/numbers/number_nine.png", jpName: "Ku", enName: "Nine"),
-    Number(image: "assets/images/numbers/number_ten.png", jpName: "Juu", enName: "Ten")
+        enName: "Eight",
+        sound: "sounds/numbers/number_eight_sound.mp3"),
+    Item_Model(
+        image: "assets/images/numbers/number_nine.png",
+        jpName: "Ku",
+        enName: "Nine",
+        sound: "sounds/numbers/number_nine_sound.mp3"),
+    Item_Model(
+        image: "assets/images/numbers/number_ten.png",
+        jpName: "Juu",
+        enName: "Ten",
+        sound: "sounds/numbers/number_ten_sound.mp3")
   ];
 
   @override
@@ -58,7 +83,7 @@ class NumbersPage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: numbers.length,
                 itemBuilder: (context, index) {
-                  return Num_item(number: numbers[index]);
+                  return ListItem(item: numbers[index]);
                 },
               ),
             )));

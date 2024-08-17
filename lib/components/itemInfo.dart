@@ -1,12 +1,11 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:lang_app/models/numbers.dart';
+import 'package:lang_app/models/items.dart';
 
-class Num_item extends StatelessWidget {
-  const Num_item({super.key, required this.number});
+class ItemInfo extends StatelessWidget {
+  const ItemInfo({super.key, required this.item});
 
-  final Number number;
-
+  final Item_Model item;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,27 +14,24 @@ class Num_item extends StatelessWidget {
         decoration: BoxDecoration(
             color: Color(0xffF6EFDC),
             borderRadius: BorderRadius.all(Radius.circular(22))),
-        width: 350,
+        width: 235,
         height: 100,
         child: Row(
           children: [
-            Image(
-              image: AssetImage(number.image),
-            ),
             Padding(
               padding: EdgeInsets.only(left: 8),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    number.jpName,
+                    item.jpName,
                     style: TextStyle(
                         fontSize: 18,
                         color: Colors.black,
                         fontWeight: FontWeight.w700),
                   ),
                   Text(
-                    number.enName,
+                    item.enName,
                     style: TextStyle(
                         fontSize: 18,
                         color: Colors.black,
@@ -48,13 +44,13 @@ class Num_item extends StatelessWidget {
               flex: 1,
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 35),
+              padding: const EdgeInsets.only(right: 10),
               child: IconButton(
                   icon: Icon(Icons.play_arrow_rounded),
                   color: Colors.black,
                   onPressed: () {
                     final player = AudioPlayer();
-                    player.play(AssetSource('assets/sounds/family/daughter.wav'));
+                    player.play(AssetSource(item.sound));
                   }),
             )
           ],
